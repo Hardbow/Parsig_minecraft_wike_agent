@@ -97,7 +97,7 @@ def agent_core():
         )
 
         add_information_on_how_to_play_minecraft = completion.choices[0].message.parsed.information_on_how_to_play_minecraft
-        links_you_what_to_check_and_their_description = completion.choices[
+        add_links_you_what_to_check_and_their_description = completion.choices[
             0].message.parsed.links_you_what_to_check_and_their_description
         need_additional_search_on_another_page = completion.choices[
             0].message.parsed.need_additional_search_on_another_page
@@ -108,7 +108,7 @@ def agent_core():
 
         # game_info += [{"role": "assistant", "content": f"{information_on_how_to_play_minecraft}"}]
         links_info += [{"role": "assistant", "content": f"{links_you_what_to_check_and_their_description}"}]
-
+        links_you_what_to_check_and_their_description += f"\n{add_links_you_what_to_check_and_their_description}"
         logger.debug(f"""##################################################
 \nadd_information_on_how_to_play_minecraft:\n{add_information_on_how_to_play_minecraft},
 \nlinks_you_what_to_check_and_their_description:\n{links_you_what_to_check_and_their_description},
